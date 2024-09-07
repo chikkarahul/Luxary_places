@@ -1,0 +1,22 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+    <h3>Listing Details</h3>
+    <div class="card" >
+  <img src="<%=listing.image%>" style="height:400px ; width:400px" >
+  <div class="card-body">
+    <h5 class="card-title"><%=listing.title%></h5>
+    <p class="card-text"><%=listing.description%></p>
+    ++
+    <p><%=listing.location%></p>
+    <p><%=listing.country%></p>
+    
+  </div>
+</div>
+    
+    <br>
+    <button type="button" ><a href="/listings/<%= listing.id %>/edit" class="editing">Edit this Listing</a></button>
+    <br><br>
+    <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
+        <button class="btn btn-danger">Delete this listing</button>
+    </form>
+</body>
